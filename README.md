@@ -61,9 +61,10 @@ After the first deploy, add the custom domain under the project's
 
 ## Notes
 
-- **Media is loaded from the existing site.** The logo, studio photo and
+- **Some media is loaded from the existing site.** The studio photo and
   community video are referenced from `naturesrhythmyoga.com` (WordPress
-  uploads). To make this site fully self-contained, download those files into
+  uploads); the logo is an inline SVG drawn in the page itself. To make this
+  site fully self-contained, download the remaining files into
   `public/assets/img/` / `public/assets/video/` and update the URLs in
   `public/index.html`.
 - **Forms are front-end only.** The open-day RSVP and free-session forms show a

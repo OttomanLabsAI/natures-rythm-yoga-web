@@ -50,3 +50,4 @@ Workers Builds redeploys automatically on every push to `main`.
 
 - v1.0 — Nature's Rhythm Yoga arrives on the web
 - v1.1 — The project learns how it ships
+- v1.2 — The logo lettering shines white and clear
