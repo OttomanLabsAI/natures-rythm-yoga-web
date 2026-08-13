@@ -16,6 +16,10 @@ public/                  ← everything that gets served
   assets/
     css/styles.css
     js/main.js
+    img/share-card.png   ← 1200×630 link-preview image
+tools/                   ← not served; regenerates the share card
+  share-card.html
+  render-share-card.py
 wrangler.jsonc           ← Cloudflare Workers (static assets) config
 package.json
 ```
@@ -67,6 +71,12 @@ After the first deploy, add the custom domain under the project's
   site fully self-contained, download the remaining files into
   `public/assets/img/` / `public/assets/video/` and update the URLs in
   `public/index.html`.
+- **Link previews use an absolute domain.** The Open Graph tags in
+  `public/index.html` point at `https://naturesrhythmyoga.com/`. If the site is
+  served from a different domain, update those URLs or the share image won't be
+  fetched by social platforms.
+- **The share card is generated, not hand-drawn.** Edit `tools/share-card.html`
+  (dates, wording) and re-render with `python3 tools/render-share-card.py`.
 - **Forms are front-end only.** The open-day RSVP and free-session forms show a
   confirmation message but don't send data anywhere yet. Wire them to a backend
   (e.g. a Worker handler + email/API, or a form service) before relying on them.

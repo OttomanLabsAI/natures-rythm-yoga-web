@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<title>Share card source — Nature's Rhythm Yoga</title>
+<!--
+  Source for public/assets/img/share-card.png (1200×630 Open Graph image).
+  Not served as part of the site. To re-render after editing:
+
+    python3 tools/render-share-card.py
+
+  Rendering by hand needs care: headless Chromium gives a viewport shorter
+  than the requested window, which crops the moon labels off the bottom.
+  The script captures taller and crops back to 1200×630.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Karla:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --night:#152019;
+  --night-2:#1d2c22;
+  --gold:#c6a15b;
+  --sage:#7e9181;
+  --moon:#ede5d0;
+  --moon-dim:#b9c0af;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1200px;height:630px;overflow:hidden;background:var(--night)}
+.card{
+  position:relative;width:1200px;height:630px;overflow:hidden;
+  background:var(--night);color:var(--moon);
+  font-family:'Karla',sans-serif;
+  display:flex;flex-direction:column;align-items:center;
+  padding:52px 60px 46px;
+}
+.stars{
+  position:absolute;inset:0;pointer-events:none;
+  background-image:
+    radial-gradient(1.6px 1.6px at 12% 22%,rgba(237,229,208,.8) 50%,transparent 51%),
+    radial-gradient(1.2px 1.2px at 28% 68%,rgba(237,229,208,.5) 50%,transparent 51%),
+    radial-gradient(1.8px 1.8px at 45% 12%,rgba(198,161,91,.8) 50%,transparent 51%),
+    radial-gradient(1.2px 1.2px at 63% 40%,rgba(237,229,208,.45) 50%,transparent 51%),
+    radial-gradient(1.5px 1.5px at 78% 20%,rgba(237,229,208,.7) 50%,transparent 51%),
+    radial-gradient(1.2px 1.2px at 88% 58%,rgba(198,161,91,.6) 50%,transparent 51%),
+    radial-gradient(1.4px 1.4px at 7% 52%,rgba(237,229,208,.55) 50%,transparent 51%),
+    radial-gradient(1.7px 1.7px at 94% 14%,rgba(237,229,208,.75) 50%,transparent 51%),
+    radial-gradient(1.2px 1.2px at 36% 34%,rgba(237,229,208,.4) 50%,transparent 51%),
+    radial-gradient(1.3px 1.3px at 70% 8%,rgba(237,229,208,.5) 50%,transparent 51%);
+}
+.halo{
+  position:absolute;left:50%;top:44%;transform:translate(-50%,-50%);
+  width:760px;height:760px;border-radius:50%;pointer-events:none;
+  background:radial-gradient(circle,rgba(198,161,91,.16) 0%,rgba(198,161,91,.055) 42%,transparent 68%);
+}
+.halo::before,.halo::after{
+  content:"";position:absolute;inset:0;border-radius:50%;
+  border:1px solid rgba(198,161,91,.16);
+}
+.halo::after{inset:12%;border-color:rgba(198,161,91,.1)}
+.content{position:relative;text-align:center;display:flex;flex-direction:column;align-items:center}
+.logo{display:block;width:104px;height:104px}
+.eyebrow{
+  display:block;margin-top:22px;
+  font-size:14px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);
+}
+h1{
+  margin-top:16px;max-width:900px;
+  font-family:'Fraunces',serif;font-weight:300;font-size:62px;line-height:1.1;letter-spacing:-0.01em;
+}
+h1 em{font-style:italic;font-weight:400;color:var(--gold)}
+.sub{margin-top:20px;font-size:20px;letter-spacing:.03em;color:var(--moon-dim)}
+
+/* moon phases */
+.moons{
+  position:relative;margin-top:auto;width:100%;max-width:1000px;
+  display:grid;grid-template-columns:repeat(6,1fr);
+}
+.moons::before{
+  content:"";position:absolute;top:28px;left:9%;right:9%;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(198,161,91,.55) 12%,rgba(198,161,91,.55) 88%,transparent);
+}
+.moon-step{text-align:center;position:relative}
+.moon{
+  width:56px;height:56px;border-radius:50%;margin:0 auto;position:relative;
+  background:var(--moon);overflow:hidden;
+  box-shadow:0 0 0 5px var(--night),0 0 0 6px rgba(198,161,91,.42),0 0 24px rgba(198,161,91,.2);
+}
+.moon::after{content:"";position:absolute;inset:0;border-radius:50%;background:var(--night-2)}
+.m1::after{transform:translateX(78%)}
+.m2::after{transform:translateX(52%)}
+.m3::after{transform:translateX(26%)}
+.m4::after{display:none}
+.m5::after{transform:translateX(-26%)}
+.m6::after{transform:translateX(-55%)}
+.month{
+  margin-top:16px;font-size:12px;font-weight:700;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--gold);
+}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="stars"></div>
+  <div class="halo"></div>
+
+  <div class="content">
+    <svg class="logo" viewBox="0 0 200 200" role="img" aria-label="Nature's Rhythm Yoga logo">
+      <circle cx="100" cy="100" r="97" fill="#ede5d0"/>
+      <circle cx="100" cy="100" r="97" fill="none" stroke="#c6a15b" stroke-width="2.5"/>
+      <circle cx="100" cy="100" r="86" fill="#2f3a47"/>
+      <circle cx="100" cy="100" r="86" fill="none" stroke="#c6a15b" stroke-width="1" stroke-opacity=".55"/>
+      <circle cx="70" cy="104" r="50" fill="#ede5d0"/>
+      <circle cx="88" cy="96" r="46" fill="#2f3a47"/>
+      <g fill="#c6a15b">
+        <path d="M100 56 C100 47 104 40 113 37 C112 46 107 53 100 56 Z"/>
+        <path d="M100 56 C100 47 96 40 87 37 C88 46 93 53 100 56 Z"/>
+      </g>
+      <g fill="#ffffff" font-family="Karla, sans-serif" font-weight="700" text-anchor="middle" letter-spacing="2.5">
+        <text x="120" y="87" font-size="15">NATURE'S</text>
+        <text x="120" y="109" font-size="15">RHYTHM</text>
+        <text x="120" y="131" font-size="15">YOGA</text>
+      </g>
+    </svg>
+
+    <span class="eyebrow">200-hour yoga teacher training · Leytonstone</span>
+    <h1>A teacher training that moves<br>at <em>nature's pace</em></h1>
+    <p class="sub">Mondays · April – September 2027 · Yoga in the Stars</p>
+  </div>
+
+  <div class="moons">
+    <div class="moon-step"><div class="moon m1"></div><div class="month">April</div></div>
+    <div class="moon-step"><div class="moon m2"></div><div class="month">May</div></div>
+    <div class="moon-step"><div class="moon m3"></div><div class="month">June</div></div>
+    <div class="moon-step"><div class="moon m4"></div><div class="month">July</div></div>
+    <div class="moon-step"><div class="moon m5"></div><div class="month">August</div></div>
+    <div class="moon-step"><div class="moon m6"></div><div class="month">September</div></div>
+  </div>
+</div>
+</body>
+</html>
