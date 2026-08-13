@@ -1,0 +1,13 @@
+{
+  "name": "natures-rythm-yoga-web",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Nature's Rhythm Yoga — 200hr teacher training landing page, hosted on Cloudflare",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  }
+}
